@@ -49,7 +49,7 @@ console.log(adminData)
         <newcontext1.Provider value={{adminData}}>
         <newcontext.Provider value={[studata,setstudata]}>
   <Newcontext.Provider value={[data,setData]}>
-<BrowserRouter>
+<BrowserRouter basename="/react-project1">
 <Routes>
 <Route path='/' element={<> <Navbars/>
 {/*<Carousel1/>*/}
