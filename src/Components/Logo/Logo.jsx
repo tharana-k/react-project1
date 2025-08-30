@@ -55,8 +55,8 @@ const Logo = () => {
 <section>
 <div className="container-fluid">
     <Slider {...settings}>
-    {array1.map(( demo)=>
-      <div className="slick-slide">
+    {array1.map(( demo,ind)=>
+      <div key={ind} className="slick-slide">
         <img className="img-fluid" src={demo.image} alt=""/>
       </div>
     

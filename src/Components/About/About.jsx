@@ -43,7 +43,7 @@ const backgroundColors = ['#9747ff', '#417cd4', '#ec732f', '#ed4883'];
                     <div className='home-button mt40 '>
 <div className='row'>
     {array1.map((demo,index)=>
-    <div className='col-md-6 icon-flex color1' >
+    <div key={index} className='col-md-6 icon-flex color1' >
     <div className='icon-wraps'  style={{ backgroundColor: backgroundColors[index] }}>
         <img className='img-fluid' src={demo.image} alt='icon'/>
                                 

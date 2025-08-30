@@ -63,7 +63,7 @@ const Team1 = () => {
 
 <Slider {...settings}>
     {data.map(( demo,ind)=>
-      <div className="slick-slide">
+      <div key={ind} className="slick-slide">
  
  <img className="img-fluid" src={demo.image} alt="Uploaded" />
 

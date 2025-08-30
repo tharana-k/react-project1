@@ -25,11 +25,11 @@ const backgroundColors = ['#9747ff', '#417cd4', '#ec732f', '#ed4883'];
                     </div>
 {array.map((demo,index)=>
 
-<>
 
-<div className="col-md-6 col-lg-3">
 
-                                <div className="single-process-box center ">
+<div key={index} className="col-md-6 col-lg-3">
+
+                                <div  className="single-process-box center ">
                                     <div className="process-icon" style={{backgroundColor:backgroundColors[index]}}>
                                         <img src={demo.image} alt=""/>
                                     </div>
@@ -37,7 +37,7 @@ const backgroundColors = ['#9747ff', '#417cd4', '#ec732f', '#ed4883'];
                                     <p>{demo.para}</p>
                                 
                                 </div>
-                            </div></>
+                            </div>
 
 )}
 
