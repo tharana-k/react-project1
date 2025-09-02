@@ -57,7 +57,9 @@ const Adminlogin = () => {
     
         </Form>
         </div>
+            <p>uname:admin,pswrd:admin</p>
         </div> 
+            
         </section>
      
       )
