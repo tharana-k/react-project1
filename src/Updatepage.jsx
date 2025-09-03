@@ -20,15 +20,11 @@ const [input,setinput] = useState({
     course:viewdata.course
 })
 const handleImageChange = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setinput({ ...input, image: reader.result });  // save Base64
-    };
-    reader.readAsDataURL(file);
-  }
-};
+    const file =URL.createObjectURL(e.target.files[0])
+    console.log('File:', file);
+      setinput({ ...input, image: file});
+  
+  };
     const handlechange=(e)=>{
      setinput({...input,[e.target.name]:e.target.value})
     }
@@ -50,7 +46,7 @@ const handleImageChange = (e) => {
         <div>
             
           <p>Selected Image:</p><br></br>
-          <img className='img-fluid' src={viewdata.image} alt="Selected" />
+          <img className='img-fluid' src={process.env.PUBLIC_URL + '/images/' + viewdata.image} alt="Selected" />
         </div>
       )}
       <Form.Label>Add a new Image</Form.Label>
