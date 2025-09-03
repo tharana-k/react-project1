@@ -46,7 +46,7 @@ const handleImageChange = (e) => {
       {viewdata.image && (
         <div>
           <p>Selected Image:</p>
-          <img className='img-fluid' src={viewdata.image} alt="Selected" />
+          <img className='img-fluid' src={process.env.PUBLIC_URL + '/' + viewdata.image} alt="Selected" />
         </div>
       )}
       <Form.Label>Add a new Image</Form.Label>

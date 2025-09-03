@@ -28,7 +28,7 @@ const handleImageChange = (e) => {
     const handlechange=(e)=>{
      setinput({...input,[e.target.name]:e.target.value})
     }
-    
+ console.log(viewdata.image);
     console.log(input);
         const handlesubmit = (e) =>{
           e.preventDefault();
@@ -36,6 +36,7 @@ const handleImageChange = (e) => {
           navigate1(-1)
           console.log("newdata:",input)
        }
+      
   return (
 <section className='detail-wrap'>
     <div className='container-fluid'>
@@ -46,7 +47,7 @@ const handleImageChange = (e) => {
         <div>
             
           <p>Selected Image:</p><br></br>
-          <img className='img-fluid' src={process.env.PUBLIC_URL + '/images/' + viewdata.image} alt="Selected" />
+          <img className='img-fluid' src={process.env.PUBLIC_URL + '/' + viewdata.image} alt="Selected" width="200" height="200"/>
         </div>
       )}
       <Form.Label>Add a new Image</Form.Label>
