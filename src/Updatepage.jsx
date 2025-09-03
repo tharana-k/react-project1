@@ -20,9 +20,10 @@ const [input,setinput] = useState({
     course:viewdata.course
 })
 const handleImageChange = (e) => {
-    const file =URL.createObjectURL(e.target.files[0])
-    console.log('File:', file);
-      setinput({ ...input, image: file});
+  const file = e.target.files[0];
+  if (file) {
+    setinput({ ...input, image: `/images/${file.name}` });
+  }
   
   };
     const handlechange=(e)=>{
@@ -46,7 +47,7 @@ const handleImageChange = (e) => {
         <div>
             
           <p>Selected Image:</p><br></br>
-          <img className='img-fluid' src={viewdata.image} alt="Selected" />
+          <img className='img-fluid' src={process.env.PUBLIC_URL + viewdata.image} alt="Selected" />
         </div>
       )}
       <Form.Label>Add a new Image</Form.Label>
