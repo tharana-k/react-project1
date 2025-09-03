@@ -22,10 +22,13 @@ const [input,setinput] = useState({
 const handleImageChange = (e) => {
   const file = e.target.files[0];
   if (file) {
-    setinput({ ...input, image: `/images/${file.name}` });
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setinput({ ...input, image: reader.result });  // save Base64
+    };
+    reader.readAsDataURL(file);
   }
-  
-  };
+};
     const handlechange=(e)=>{
      setinput({...input,[e.target.name]:e.target.value})
     }
@@ -47,7 +50,7 @@ const handleImageChange = (e) => {
         <div>
             
           <p>Selected Image:</p><br></br>
-          <img className='img-fluid' src={process.env.PUBLIC_URL + viewdata.image} alt="Selected" />
+          <img className='img-fluid' src={viewdata.image} alt="Selected" />
         </div>
       )}
       <Form.Label>Add a new Image</Form.Label>
